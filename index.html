@@ -4,13 +4,46 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="app/app.js"></script>
 </head>
 <body ng-app="StarterApp">
+  <div class="nav-bar">
+    <md-toolbar ng-controller="NavCtrl">
+     <div class="md-toolbar-tools">
+       <md-button class="md-icon-button" aria-label="Menu" ng-click="toggleLeft()" hide-gt-md>
+          <i class="material-icons md-18">menu</i>
+        </md-button>
+       <h2>
+         <span>Angular Material Starter Template</span>
+       </h2>
+       <span flex></span>
+       <md-button class="md-raised" aria-label="Learn More">
+         Learn More
+       </md-button>
+       <md-button class="md-fab md-mini" aria-label="Favorite">
+       </md-button>
+     </div>
+   </md-toolbar>
+ </div>
+ <div class="side-nav-bar">
+   <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+      <md-content layout-padding ng-controller="LeftCtrl">
+        <md-button ng-click="close()" class="md-primary" hide-gt-md>
+          Close Sidenav Left
+        </md-button>
+        <p hide-md show-gt-md>
+          This sidenav is locked open on your device. To go back to the default behavior,
+          narrow your display.
+        </p>
+      </md-content>
+    </md-sidenav>
+ </div>
   <div class="" ng-view></div>
 </body>
 </html>
