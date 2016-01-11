@@ -3,7 +3,9 @@
   angular.module('StarterApp',['ngMaterial','ui.router'])
 
   .config(['$stateProvider','$mdThemingProvider','$mdGestureProvider',function($stateProvider,$mdThemingProvider,$mdGestureProvider){
-
+    $mdThemingProvider.theme('default')
+    .primaryPalette('blue')
+    .accentPalette('red');
   }])
 
   .controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {

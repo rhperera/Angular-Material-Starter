@@ -11,10 +11,24 @@
     <script src="bower_components/angular-material/angular-material.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="app/app.js"></script>
+    <title>Angular Material Starter</title>
 </head>
-<body ng-app="StarterApp">
-  <div class="nav-bar">
-    <md-toolbar ng-controller="NavCtrl">
+<body ng-app="StarterApp" layout="row" ng-cloak>
+
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+       <md-content layout-padding ng-controller="LeftCtrl">
+         <md-button ng-click="close()" class="md-primary" hide-gt-md>
+           Close Sidenav Left
+         </md-button>
+         <p hide-md show-gt-md>
+           This sidenav is locked open on your device. To go back to the default behavior,
+           narrow your display.
+         </p>
+       </md-content>
+     </md-sidenav>
+
+  <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+    <md-toolbar ng-controller="NavCtrl" class="md-whiteframe-2dp">
      <div class="md-toolbar-tools">
        <md-button class="md-icon-button" aria-label="Menu" ng-click="toggleLeft()" hide-gt-md>
           <i class="material-icons md-18">menu</i>
@@ -30,20 +44,10 @@
        </md-button>
      </div>
    </md-toolbar>
- </div>
- <div class="side-nav-bar">
-   <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
-      <md-content layout-padding ng-controller="LeftCtrl">
-        <md-button ng-click="close()" class="md-primary" hide-gt-md>
-          Close Sidenav Left
-        </md-button>
-        <p hide-md show-gt-md>
-          This sidenav is locked open on your device. To go back to the default behavior,
-          narrow your display.
-        </p>
-      </md-content>
-    </md-sidenav>
- </div>
-  <div class="" ng-view></div>
+
+ <md-content flex>
+
+</md-content>
+</div>
 </body>
 </html>
